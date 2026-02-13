@@ -84,7 +84,7 @@ function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[1.05] tracking-[-0.03em] max-w-5xl"
+          className="font-headline mt-8 text-[clamp(2.8rem,7vw,6rem)] leading-[1.02] tracking-[-0.05em] max-w-5xl"
         >
           물류장비를
           <br />
@@ -139,7 +139,7 @@ function Hero() {
             { value: 24, suffix: "h", label: "긴급 출동" },
           ].map((s, i) => (
             <div key={s.label} className="glass-card rounded-2xl px-5 py-4">
-              <p className="text-2xl md:text-3xl font-bold text-gradient tracking-tight">
+              <p className="font-stat text-2xl md:text-3xl text-gradient">
                 <Counter target={s.value} suffix={s.suffix} />
               </p>
               <p className="text-[13px] text-white/30 mt-1">{s.label}</p>
@@ -189,7 +189,7 @@ function BrandIntro() {
               <span className="tag mb-6">From purchase to subscription</span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-[-0.02em] mt-4">
+              <h2 className="font-headline text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.08] tracking-[-0.05em] mt-4">
                 구매에서 구독으로,
                 <br />
                 물류장비의 <span className="text-gradient">새로운 기준.</span>
@@ -209,7 +209,7 @@ function BrandIntro() {
                   { num: "∞", label: "장비 교체 가능" },
                 ].map((item) => (
                   <div key={item.label}>
-                    <p className="text-2xl font-bold text-gradient">{item.num}</p>
+                    <p className="font-stat text-2xl text-gradient">{item.num}</p>
                     <p className="text-[13px] text-white/30 mt-1">{item.label}</p>
                   </div>
                 ))}
@@ -271,7 +271,7 @@ function ServicesSection() {
               <span className="tag mb-6">Equipment & Services</span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.1] tracking-[-0.02em] mt-4">
+              <h2 className="font-headline text-[clamp(2rem,4vw,3.2rem)] leading-[1.08] tracking-[-0.05em] mt-4">
                 물류 현장에 필요한
                 <br />
                 <span className="text-gradient">모든 것</span>을 구독합니다.
@@ -327,7 +327,7 @@ function ProcessSection() {
         <Reveal>
           <div className="text-center mb-20">
             <span className="tag mb-6">How it works</span>
-            <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-[-0.02em] mt-4">
+            <h2 className="font-headline text-[clamp(2rem,4vw,3.2rem)] tracking-[-0.05em] mt-4">
               <span className="text-gradient">4단계</span>로 시작하는 장비 구독
             </h2>
           </div>
@@ -398,7 +398,7 @@ function PlansSection() {
         <Reveal>
           <div className="text-center mb-16">
             <span className="tag mb-6">Pricing</span>
-            <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-bold tracking-[-0.02em] mt-4 mb-4">구독 플랜</h2>
+            <h2 className="font-headline text-[clamp(2rem,4vw,3.2rem)] tracking-[-0.05em] mt-4 mb-4">구독 플랜</h2>
             <p className="text-white/35 text-[15px] max-w-lg mx-auto">비즈니스 규모에 맞는 플랜을 선택하세요. 모든 플랜에 유지보수가 포함되어 있습니다.</p>
           </div>
         </Reveal>
@@ -427,7 +427,7 @@ function PlansSection() {
                 {/* Price */}
                 <div className="mb-7 pb-7 border-b border-white/[0.06]">
                   <div className="flex items-baseline gap-1">
-                    <span className={`text-4xl font-bold tracking-tight ${p.highlight ? "text-gradient" : "text-white/90"}`}>{p.price}</span>
+                    <span className={`font-stat text-4xl ${p.highlight ? "text-gradient" : "text-white/90"}`}>{p.price}</span>
                     <span className="text-[14px] text-white/30">{p.unit}</span>
                   </div>
                   <p className="text-[12px] text-white/20 mt-1">/ 월</p>
@@ -489,7 +489,7 @@ function FAQSection() {
               <span className="tag mb-6">FAQ</span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.1] tracking-[-0.02em] mt-4">
+              <h2 className="font-headline text-[clamp(2rem,4vw,3.2rem)] leading-[1.08] tracking-[-0.05em] mt-4">
                 자주 묻는
                 <br />
                 <span className="text-gradient">질문</span>
@@ -557,8 +557,8 @@ function ClientsSection() {
         <Reveal>
           <div className="text-center mb-16">
             <span className="tag mb-6">Our Clients</span>
-            <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-bold tracking-[-0.02em] mt-4 mb-4">
-              <span className="text-gradient">500+</span> 기업이 선택한 파트너
+            <h2 className="font-headline text-[clamp(1.8rem,3.5vw,2.8rem)] tracking-[-0.05em] mt-4 mb-4">
+              <span className="text-gradient font-stat">500+</span> 기업이 선택한 파트너
             </h2>
             <p className="text-white/30 text-[15px] max-w-lg mx-auto">다양한 규모의 물류 기업이 AOVO의 장비 구독 서비스를 이용하고 있습니다.</p>
           </div>
@@ -596,7 +596,7 @@ function CTASection() {
           <span className="tag mb-8 mx-auto">Get Started Today</span>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="text-[clamp(2.2rem,5vw,4rem)] font-bold tracking-[-0.03em] leading-[1.1] mt-4 mb-6">
+          <h2 className="font-headline text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.05em] leading-[1.05] mt-4 mb-6">
             장비 구매는 그만,
             <br />
             <span className="text-gradient-warm">구독을 시작하세요.</span>

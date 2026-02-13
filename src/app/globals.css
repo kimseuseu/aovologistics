@@ -20,8 +20,10 @@
   --color-blue-primary: var(--blue-primary);
   --color-blue-light: var(--blue-light);
   --color-pink-accent: var(--pink-accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'SUIT Variable', var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-inter), 'SF Mono', 'Cascadia Code', monospace;
+  --font-headline: 'GmarketSansBold', 'SUIT Variable', system-ui, sans-serif;
+  --font-stat: var(--font-inter), 'SF Pro Display', system-ui, sans-serif;
 }
 
 /* ── Lenis ── */
@@ -33,8 +35,25 @@ html.lenis, html.lenis body { height: auto; }
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
   overflow-x: hidden;
+  font-feature-settings: 'ss01', 'ss02';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography System ── */
+.font-headline {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+.font-stat {
+  font-family: var(--font-stat);
+  font-weight: 700;
+  font-feature-settings: 'tnum', 'ss01';
+  letter-spacing: -0.02em;
 }
 
 /* ── Gradient Text ── */
