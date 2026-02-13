@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AOVO LOGISTICS | 스마트 물류 솔루션",
+  title: "AOVO LOGISTICS | 물류장비 구독 서비스",
   description:
-    "AOVO LOGISTICS - 풀필먼트, 창고 관리, 실시간 배송 추적까지. 비즈니스 성장을 위한 통합 물류 파트너.",
+    "AOVO LOGISTICS - 지게차, 컨베이어, 보관장비를 월 구독료로. 초기 비용 없이 최신 물류장비 도입부터 유지보수까지.",
 };
 
 export default function RootLayout({

@@ -5,11 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 
 const categories = [
-  { label: "물류 서비스", href: "/services" },
-  { label: "풀필먼트", href: "/fulfillment" },
-  { label: "창고 관리", href: "/warehouse" },
-  { label: "배송 추적", href: "/tracking" },
-  { label: "파트너", href: "/partners" },
+  { label: "구독 플랜", href: "/plans" },
+  { label: "지게차", href: "/equipment/forklift" },
+  { label: "컨베이어", href: "/equipment/conveyor" },
+  { label: "보관장비", href: "/equipment/storage" },
+  { label: "포장장비", href: "/equipment/packaging" },
   { label: "고객지원", href: "/support" },
 ];
 
@@ -147,7 +147,7 @@ export default function Header() {
                 <div className="w-full relative">
                   <input
                     type="text"
-                    placeholder="물류 서비스, 배송 추적, 견적 문의..."
+                    placeholder="지게차, 컨베이어, 보관장비 검색..."
                     className="w-full h-10 pl-10 pr-4 rounded-full bg-gray-50 border border-gray-200 text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-green-primary/40 focus:bg-white transition-all duration-200"
                   />
                   <svg
@@ -283,7 +283,7 @@ export default function Header() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="물류 서비스, 배송 추적, 견적 문의..."
+                  placeholder="지게차, 컨베이어, 보관장비 검색..."
                   className="w-full h-12 pl-12 pr-4 rounded-full bg-gray-50 border border-gray-200 text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-green-primary/40 focus:bg-white transition-all"
                   autoFocus
                 />

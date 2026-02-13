@@ -16,16 +16,16 @@ const modalContents: Record<string, { title: string; content: string }> = {
     content: `주식회사 킴샵(이하 "회사")은 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.\n\n제1조 (개인정보의 처리 목적)\n회사는 회원 가입 및 관리, 물류 서비스 제공, 고충처리 목적으로 개인정보를 처리합니다.\n\n제2조 (개인정보의 처리 및 보유기간)\n회원 가입 및 관리: 회원 탈퇴 시까지\n서비스 제공: 서비스 공급완료 및 요금결제·정산 완료 시까지\n\n개인정보 보호책임자\n성명: 김영식 | 직책: 대표이사\n연락처: 02-2683-4459 | 이메일: mbc8447289@naver.com`,
   },
   guide: {
-    title: "이용안내",
-    content: `AOVO LOGISTICS 서비스 이용안내\n\n■ 서비스 신청 방법\n1. 회원가입 후 물류 서비스를 선택합니다.\n2. 견적 요청 양식을 작성하여 제출합니다.\n3. 담당자가 맞춤 견적을 안내드립니다.\n4. 계약 체결 후 서비스가 시작됩니다.\n\n■ 고객센터 안내\n전화번호: 02-2683-4459\n운영시간: 평일 10:00 ~ 17:00\n점심시간: 12:30 ~ 13:30\n휴무일: 토/일/공휴일\n이메일: mbc8447289@naver.com`,
+    title: "구독 이용안내",
+    content: `AOVO LOGISTICS 장비 구독 이용안내\n\n■ 구독 신청 방법\n1. 회원가입 후 필요한 장비와 구독 플랜을 선택합니다.\n2. 견적 요청 양식을 작성하여 제출합니다.\n3. 전문가가 현장을 방문하여 최적의 장비와 사양을 제안합니다.\n4. 계약 체결 후 장비 배송, 설치, 시운전을 진행합니다.\n\n■ 구독 관리\n- 마이페이지에서 구독 현황, 정비 일정, 비용 내역을 확인할 수 있습니다.\n- 장비 추가/교체/해지는 전담 매니저를 통해 신청하세요.\n\n■ 고객센터 안내\n전화번호: 02-2683-4459\n운영시간: 평일 10:00 ~ 17:00\n점심시간: 12:30 ~ 13:30\n휴무일: 토/일/공휴일\n이메일: mbc8447289@naver.com`,
   },
   exchange: {
-    title: "서비스 변경/해지 정책",
-    content: `AOVO LOGISTICS 서비스 변경/해지 정책\n\n■ 서비스 변경\n서비스 계약 기간 중 서비스 플랜 변경을 원하시는 경우 담당자에게 문의해 주세요.\n\n■ 서비스 해지\n계약 기간 만료 30일 전까지 서면 통지를 통해 해지 가능합니다.\n조기 해지 시 잔여 계약 기간에 따른 위약금이 발생할 수 있습니다.\n\n■ 문의처\n고객센터: 02-2683-4459\n운영시간: 평일 10:00 ~ 17:00\n이메일: mbc8447289@naver.com`,
+    title: "구독 변경/해지 정책",
+    content: `AOVO LOGISTICS 구독 변경/해지 정책\n\n■ 플랜 변경\n구독 기간 중 플랜 업그레이드 또는 장비 추가/교체가 가능합니다.\n전담 매니저에게 문의해 주세요.\n\n■ 구독 해지\n- 최소 구독 기간(6개월) 경과 후 해지 가능\n- 해지 희망 시 30일 전 서면 통지\n- 조기 해지 시 잔여 기간에 따른 위약금 발생 가능\n- 장비 회수 일정은 별도 협의\n\n■ 문의처\n고객센터: 02-2683-4459\n운영시간: 평일 10:00 ~ 17:00\n이메일: mbc8447289@naver.com`,
   },
   shipping: {
-    title: "물류 정책",
-    content: `AOVO LOGISTICS 물류 정책\n\n■ 배송 방법\n- 일반 택배 배송 (CJ대한통운, 롯데택배)\n- 화물 배송\n- 국제 물류 (해상/항공)\n\n■ 배송 기간\n- 일반 택배: 결제 완료 후 2~5영업일\n- 화물 배송: 상품 특성에 따라 별도 안내\n- 국제 물류: 목적지에 따라 7~30영업일\n\n■ 문의처\n고객센터: 02-2683-4459\n운영시간: 평일 10:00 ~ 17:00\n이메일: mbc8447289@naver.com`,
+    title: "장비 배송/설치 정책",
+    content: `AOVO LOGISTICS 장비 배송/설치 정책\n\n■ 배송 방법\n- 소형 장비: 화물 택배\n- 대형 장비(지게차, 컨베이어 등): 전문 운송 차량\n\n■ 설치 안내\n- 전문 설치 기사가 현장 방문하여 설치 및 시운전\n- 설치 비용은 구독료에 포함\n- 설치 소요 기간: 소형 1~2일, 대형 3~5일\n\n■ 배송 기간\n- 재고 장비: 계약 후 5~7영업일\n- 주문제작 장비: 2~4주\n\n■ 문의처\n고객센터: 02-2683-4459\n운영시간: 평일 10:00 ~ 17:00\n이메일: mbc8447289@naver.com`,
   },
 };
 
@@ -95,29 +95,29 @@ export default function Footer() {
             <div className="text-center group">
               <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-green-primary/5 group-hover:bg-green-primary/10 transition-colors duration-300">
                 <svg className="w-5 h-5 text-green-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
                 </svg>
               </div>
-              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">전국 배송</p>
-              <p className="text-sm text-gray-900 font-medium">당일/익일 출고</p>
+              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">초기 비용</p>
+              <p className="text-sm text-gray-900 font-medium">0원 시작</p>
             </div>
             <div className="text-center group">
               <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-green-primary/5 group-hover:bg-green-primary/10 transition-colors duration-300">
                 <svg className="w-5 h-5 text-green-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.42 15.17l-5.1-5.1m0 0L3.14 12.9a.75.75 0 000 1.06l5.1 5.1m-5.1-5.1h11.48m0 0l2.17-2.83a.75.75 0 000-.94l-2.17-2.83M16.9 10.07h3.36a.75.75 0 01.75.75v2.36a.75.75 0 01-.75.75H16.9" />
                 </svg>
               </div>
-              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">풀필먼트</p>
-              <p className="text-sm text-gray-900 font-medium">통합 물류 관리</p>
+              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">유지보수</p>
+              <p className="text-sm text-gray-900 font-medium">구독료 포함</p>
             </div>
             <div className="text-center group">
               <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-green-primary/5 group-hover:bg-green-primary/10 transition-colors duration-300">
                 <svg className="w-5 h-5 text-green-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182M21.038 4.656v4.992" />
                 </svg>
               </div>
-              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">안전 보장</p>
-              <p className="text-sm text-gray-900 font-medium">실시간 추적</p>
+              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">장비 교체</p>
+              <p className="text-sm text-gray-900 font-medium">유연한 변경</p>
             </div>
             <div className="text-center group">
               <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-green-primary/5 group-hover:bg-green-primary/10 transition-colors duration-300">
@@ -125,8 +125,8 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                 </svg>
               </div>
-              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">1:1 상담</p>
-              <p className="text-sm text-gray-900 font-medium">전담 매니저</p>
+              <p className="text-[10px] text-gray-400 tracking-wider uppercase mb-0.5">긴급 출동</p>
+              <p className="text-sm text-gray-900 font-medium">24시간 대응</p>
             </div>
           </div>
 
@@ -162,11 +162,11 @@ export default function Footer() {
             <div>
               <h4 className="text-[11px] text-gray-400 tracking-[0.2em] uppercase mb-4 font-medium">바로가기</h4>
               <ul className="space-y-3 text-sm">
-                <li><Link href="/services" className="text-gray-500 hover:text-green-primary transition-colors">물류 서비스</Link></li>
-                <li><Link href="/fulfillment" className="text-gray-500 hover:text-green-primary transition-colors">풀필먼트</Link></li>
-                <li><Link href="/tracking" className="text-gray-500 hover:text-green-primary transition-colors">배송 추적</Link></li>
+                <li><Link href="/plans" className="text-gray-500 hover:text-green-primary transition-colors">구독 플랜</Link></li>
+                <li><Link href="/equipment" className="text-gray-500 hover:text-green-primary transition-colors">장비 카탈로그</Link></li>
                 <li><Link href="/support" className="text-gray-500 hover:text-green-primary transition-colors">고객지원</Link></li>
-                <li><Link href="/inquiry" className="text-gray-500 hover:text-green-primary transition-colors">1:1 문의</Link></li>
+                <li><Link href="/faq" className="text-gray-500 hover:text-green-primary transition-colors">자주 묻는 질문</Link></li>
+                <li><Link href="/inquiry" className="text-gray-500 hover:text-green-primary transition-colors">견적 문의</Link></li>
               </ul>
             </div>
           </div>
@@ -178,11 +178,11 @@ export default function Footer() {
               <span className="text-gray-200">|</span>
               <button onClick={() => openModal("privacy")} className="text-gray-700 font-medium hover:text-green-primary transition-colors">개인정보처리방침</button>
               <span className="text-gray-200">|</span>
-              <button onClick={() => openModal("guide")} className="hover:text-gray-700 transition-colors">이용안내</button>
+              <button onClick={() => openModal("guide")} className="hover:text-gray-700 transition-colors">구독 이용안내</button>
               <span className="text-gray-200">|</span>
-              <button onClick={() => openModal("exchange")} className="hover:text-gray-700 transition-colors">서비스 변경/해지</button>
+              <button onClick={() => openModal("exchange")} className="hover:text-gray-700 transition-colors">구독 변경/해지</button>
               <span className="text-gray-200">|</span>
-              <button onClick={() => openModal("shipping")} className="hover:text-gray-700 transition-colors">물류 정책</button>
+              <button onClick={() => openModal("shipping")} className="hover:text-gray-700 transition-colors">장비 배송/설치</button>
             </div>
 
             <div className="flex flex-col md:flex-row justify-between items-center gap-3">
