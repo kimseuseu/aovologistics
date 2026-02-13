@@ -95,11 +95,11 @@ export default function Footer() {
             {/* Brand column */}
             <div className="md:col-span-5">
               <Image
-                src="/images/aovologo_white.png"
+                src="/images/aovo_symbol.png"
                 alt="AOVO LOGISTICS"
                 width={100}
                 height={40}
-                className="h-6 w-auto mb-5 opacity-70"
+                className="h-6 w-auto mb-5 opacity-70 invert"
               />
               <p className="text-[13px] text-white/25 leading-[1.8] max-w-sm mb-6">
                 물류장비 구독 서비스. 지게차부터 컨베이어까지,

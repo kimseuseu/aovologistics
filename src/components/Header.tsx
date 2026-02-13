@@ -68,11 +68,11 @@ export default function Header() {
               {/* Logo */}
               <Link href="/" className="relative flex-shrink-0 group">
                 <Image
-                  src="/images/aovologo_white.png"
+                  src="/images/aovo_symbol.png"
                   alt="AOVO"
                   width={88}
                   height={30}
-                  className={`w-auto transition-all duration-500 ${scrolled ? "h-[22px]" : "h-[26px]"}`}
+                  className={`w-auto invert transition-all duration-500 ${scrolled ? "h-[22px]" : "h-[26px]"}`}
                   priority
                 />
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gradient-to-r from-purple-primary to-blue-primary group-hover:w-full transition-all duration-500" />
