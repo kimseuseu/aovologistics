@@ -101,7 +101,7 @@ export default function Footer() {
                 className="h-6 w-auto mb-5 opacity-60"
               />
               <p className="text-[13px] text-gray-400 leading-[1.8] max-w-sm mb-6">
-                물류장비 구독 서비스. 지게차부터 컨베이어까지,
+                물류장비 구독 서비스. 이동식도크부터 트레일러까지,
                 초기 비용 없이 월 구독료로 도입하고 유지보수까지 해결합니다.
               </p>
               <div className="text-[12px] text-gray-300 space-y-1.5 leading-relaxed">
@@ -117,7 +117,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {[
                   { label: "구독 플랜", href: "/plans" },
-                  { label: "장비 카탈로그", href: "/equipment" },
+                  { label: "장비 전체보기", href: "/equipment" },
                   { label: "견적 문의", href: "/inquiry" },
                 ].map((item) => (
                   <li key={item.href}>

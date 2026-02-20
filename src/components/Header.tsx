@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "구독 플랜", href: "/plans" },
-  { label: "지게차", href: "/equipment/forklift" },
-  { label: "컨베이어", href: "/equipment/conveyor" },
-  { label: "보관장비", href: "/equipment/storage" },
-  { label: "포장장비", href: "/equipment/packaging" },
+  { label: "이동식도크", href: "/equipment/dock" },
+  { label: "리프트", href: "/equipment/lift" },
+  { label: "롤테이너", href: "/equipment/rolltainer" },
+  { label: "트레일러", href: "/equipment/trailer" },
   { label: "고객지원", href: "/support" },
 ];
 
@@ -261,7 +261,7 @@ export default function Header() {
                 <input
                   ref={searchInputRef}
                   type="text"
-                  placeholder="장비, 서비스, 플랜 검색..."
+                  placeholder="이동식도크, 리프트, 롤테이너 검색..."
                   className="w-full h-14 pl-14 pr-14 rounded-2xl bg-white border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200 shadow-2xl"
                 />
                 <button
@@ -273,7 +273,7 @@ export default function Header() {
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {["지게차", "컨베이어", "구독 플랜", "견적 문의"].map((tag) => (
+                {["이동식도크", "리프트", "롤테이너", "견적 문의"].map((tag) => (
                   <button key={tag} className="px-3.5 py-1.5 rounded-lg bg-white border border-gray-200 text-xs text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-all duration-200 shadow-sm">
                     {tag}
                   </button>

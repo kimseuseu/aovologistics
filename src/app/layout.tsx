@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AOVO LOGISTICS | 물류장비 구독 서비스",
   description:
-    "AOVO LOGISTICS - 지게차, 컨베이어, 보관장비를 월 구독료로. 초기 비용 없이 최신 물류장비 도입부터 유지보수까지.",
+    "AOVO LOGISTICS - 이동식도크, 리프트, 롤테이너, 트레일러 등 물류장비를 월 구독료로. 초기 비용 없이 도입부터 유지보수까지.",
 };
 
 export default function RootLayout({
