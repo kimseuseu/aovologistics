@@ -30,6 +30,13 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.css"
         />
+        {/* Syne — logo font (Google Fonts CDN) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap"
+        />
         {/* SUIT — body font (CDN) */}
         <link
           rel="stylesheet"

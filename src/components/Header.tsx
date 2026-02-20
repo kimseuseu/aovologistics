@@ -61,16 +61,29 @@ export default function Header() {
             <div className={`relative flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14" : "h-16"}`}>
 
               {/* Logo */}
-              <Link href="/" className="relative flex-shrink-0 group z-10">
+              <Link href="/" className="relative flex-shrink-0 group z-10 flex items-center gap-2.5">
                 <Image
                   src="/images/aovo_symbol.png"
                   alt="AOVO"
-                  width={88}
-                  height={30}
-                  className={`w-auto transition-all duration-500 ${scrolled ? "h-[22px]" : "h-[26px]"}`}
+                  width={120}
+                  height={40}
+                  className={`w-auto transition-all duration-500 ${scrolled ? "h-[30px]" : "h-[36px]"}`}
                   priority
                 />
-                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-purple-primary group-hover:w-full transition-all duration-500" />
+                <div className={`flex flex-col leading-none transition-all duration-500 ${scrolled ? "gap-0" : "gap-0.5"}`}>
+                  <span
+                    className={`font-extrabold tracking-tight text-gray-900 transition-all duration-500 ${scrolled ? "text-[14px]" : "text-[16px]"}`}
+                    style={{ fontFamily: "'Syne', sans-serif" }}
+                  >
+                    AOVO
+                  </span>
+                  <span
+                    className={`font-bold tracking-wide text-gray-400 uppercase transition-all duration-500 ${scrolled ? "text-[8px]" : "text-[9px]"}`}
+                    style={{ fontFamily: "'Syne', sans-serif" }}
+                  >
+                    Logistics
+                  </span>
+                </div>
               </Link>
 
               {/* Center Nav — desktop (absolute center) */}
