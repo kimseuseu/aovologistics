@@ -41,90 +41,151 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 /* ══════════════════════════════════════
-   1. HERO
+   1. HERO — 숨고 스타일
    ══════════════════════════════════════ */
 function Hero() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const categories = [
+    { label: "전체보기", icon: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" },
+    { label: "지게차", icon: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" },
+    { label: "컨베이어", icon: "M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" },
+    { label: "보관장비", icon: "M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" },
+    { label: "포장장비", icon: "M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" },
+    { label: "유지보수", icon: "M11.42 15.17l-5.1-5.1m0 0L3.14 12.9a.75.75 0 000 1.06l5.1 5.1m-5.1-5.1h11.48m0 0l2.17-2.83a.75.75 0 000-.94l-2.17-2.83M16.9 10.07h3.36a.75.75 0 01.75.75v2.36a.75.75 0 01-.75.75H16.9" },
+    { label: "긴급출동", icon: "M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" },
+  ];
+
+  const quickServices = [
+    { top: "초기 비용 없이", title: "장비 구독", count: "장비 서비스 4종", href: "/equipment" },
+    { top: "전문가가 직접", title: "유지보수", count: "관리 서비스 3종", href: "/services" },
+    { top: "24시간 대응", title: "긴급 출동", count: "긴급 서비스 2종", href: "/emergency" },
+    { top: "맞춤형 설계", title: "물류 컨설팅", count: "컨설팅 서비스 3종", href: "/consulting" },
+  ];
+
   return (
-    <section className="relative bg-white pt-16 pb-20 lg:pt-24 lg:pb-28">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Main headline area */}
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-medium text-purple-primary bg-purple-50 border border-purple-100">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-primary" />
-              물류장비 구독 서비스
-            </span>
-          </motion.div>
+    <section className="bg-white pt-12 pb-16 lg:pt-20 lg:pb-24">
+      <div className="max-w-4xl mx-auto px-6">
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="font-headline text-center text-[clamp(1.8rem,4.5vw,2.8rem)] leading-[1.2] tracking-[-0.03em] text-gray-900"
+        >
+          물류장비, 구독으로 해결하세요
+        </motion.h1>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-headline mt-8 text-[clamp(2.4rem,5.5vw,4.2rem)] leading-[1.15] tracking-[-0.03em] text-gray-900"
-          >
-            물류장비를{" "}
-            <span className="text-purple-primary">구독</span>하는 시대
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-gray-500 text-lg leading-relaxed max-w-xl mx-auto"
-          >
-            지게차부터 컨베이어까지, 초기 비용 없이 월 구독료로 도입하고
-            유지보수까지 한번에 해결합니다.
-          </motion.p>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-wrap justify-center gap-3"
-          >
-            <Link
-              href="/plans"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-purple-primary text-white text-[15px] font-semibold hover:bg-purple-dark transition-colors duration-200 shadow-lg shadow-purple-primary/20"
-            >
-              구독 플랜 보기
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-            </Link>
+        {/* Search bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-10 max-w-2xl mx-auto"
+        >
+          <div className="relative flex items-center">
+            <div className="absolute left-5">
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </div>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="어떤 물류장비가 필요하세요?"
+              className="w-full h-14 pl-14 pr-36 rounded-2xl border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200"
+            />
             <Link
               href="/inquiry"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-gray-600 text-[15px] font-medium border border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-200"
+              className="absolute right-2 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-purple-primary text-white text-[13px] font-semibold hover:bg-purple-dark transition-colors duration-200"
             >
-              무료 상담 신청
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" /></svg>
+              AI 견적 요청
             </Link>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
-        {/* Stats */}
+        {/* Category icons */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-10 flex justify-center gap-6 md:gap-10 flex-wrap"
         >
+          {categories.map((cat) => (
+            <Link
+              key={cat.label}
+              href={`/category/${cat.label}`}
+              className="flex flex-col items-center gap-2.5 group"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-purple-50 group-hover:border-purple-100 transition-all duration-200">
+                <svg className="w-6 h-6 text-gray-500 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={cat.icon} />
+                </svg>
+              </div>
+              <span className="text-[12px] text-gray-500 group-hover:text-gray-900 font-medium transition-colors duration-200">{cat.label}</span>
+            </Link>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Quick service cards — full width */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.35 }}
+        className="max-w-7xl mx-auto px-6 mt-16"
+      >
+        <h2 className="font-headline text-[20px] tracking-[-0.02em] text-gray-900 mb-6">
+          지금 필요한 서비스, 한번에 견적 받기
+        </h2>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {quickServices.map((svc, i) => (
+            <Link
+              key={svc.title}
+              href={svc.href}
+              className="group relative rounded-2xl border border-gray-100 bg-gray-50 overflow-hidden hover:shadow-lg hover:shadow-gray-100/80 hover:border-gray-200 transition-all duration-300"
+            >
+              <div className="p-5 pb-14">
+                <p className="text-[12px] text-gray-400">{svc.top}</p>
+                <p className="text-[17px] font-bold text-gray-900 mt-1">{svc.title}</p>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 px-5 py-3.5 border-t border-gray-100 bg-white flex items-center justify-between">
+                <span className="text-[13px] text-gray-500">{svc.count}</span>
+                <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-500 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Stats strip */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="max-w-7xl mx-auto px-6 mt-14"
+      >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { value: 500, suffix: "+", label: "구독 기업" },
             { value: 3000, suffix: "+", label: "운영 장비" },
             { value: 99, suffix: "%", label: "재구독률" },
             { value: 24, suffix: "h", label: "긴급 출동" },
           ].map((s) => (
-            <div key={s.label} className="text-center py-5 px-4 rounded-2xl bg-gray-50">
+            <div key={s.label} className="text-center py-5 px-4 rounded-2xl bg-gray-50 border border-gray-100">
               <p className="font-stat text-2xl md:text-3xl text-purple-primary">
                 <Counter target={s.value} suffix={s.suffix} />
               </p>
               <p className="text-[13px] text-gray-400 mt-1">{s.label}</p>
             </div>
           ))}
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
