@@ -61,24 +61,25 @@ export default function Header() {
             <div className={`relative flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14" : "h-16"}`}>
 
               {/* Logo */}
-              <Link href="/" className="relative flex-shrink-0 group z-10 flex items-center gap-2.5">
+              <Link href="/" className="relative flex-shrink-0 group z-10 flex items-center gap-2">
                 <Image
                   src="/images/aovo_symbol.png"
                   alt="AOVO"
                   width={120}
                   height={40}
-                  className={`w-auto transition-all duration-500 ${scrolled ? "h-[30px]" : "h-[36px]"}`}
+                  className={`w-auto transition-all duration-500 ${scrolled ? "h-[26px]" : "h-[30px]"}`}
                   priority
                 />
-                <div className={`flex flex-col leading-none transition-all duration-500 ${scrolled ? "gap-0" : "gap-0.5"}`}>
+                <div className="w-px self-stretch bg-gray-200/80 mx-0.5" />
+                <div className="flex flex-col leading-none gap-[2px]">
                   <span
-                    className={`font-extrabold tracking-tight text-gray-900 transition-all duration-500 ${scrolled ? "text-[14px]" : "text-[16px]"}`}
+                    className={`font-extrabold tracking-[-0.02em] text-gray-900 transition-all duration-500 ${scrolled ? "text-[15px]" : "text-[17px]"}`}
                     style={{ fontFamily: "'Syne', sans-serif" }}
                   >
                     AOVO
                   </span>
                   <span
-                    className={`font-bold tracking-wide text-gray-500 uppercase transition-all duration-500 ${scrolled ? "text-[8px]" : "text-[9px]"}`}
+                    className={`font-bold tracking-[0.12em] text-gray-400 uppercase transition-all duration-500 ${scrolled ? "text-[7.5px]" : "text-[8.5px]"}`}
                     style={{ fontFamily: "'Syne', sans-serif" }}
                   >
                     Logistics
