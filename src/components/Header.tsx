@@ -37,7 +37,6 @@ export default function Header() {
     }
   }, [searchOpen]);
 
-  // Close mobile menu on resize
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 1024) setMobileOpen(false); };
     window.addEventListener("resize", onResize);
@@ -46,24 +45,20 @@ export default function Header() {
 
   return (
     <>
-      {/* ─── Main Header ─── */}
       <header
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          scrolled
-            ? "py-0"
-            : "py-2"
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+          scrolled ? "py-0" : "py-2"
         }`}
       >
-        {/* Floating bar container */}
         <div
-          className={`mx-auto transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`mx-auto transition-all duration-500 ${
             scrolled
-              ? "max-w-full bg-[#08080f]/70 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.04]"
-              : "max-w-7xl mx-4 lg:mx-auto mt-2 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.06]"
+              ? "max-w-full bg-white/80 backdrop-blur-xl border-b border-gray-200/60 shadow-sm"
+              : "max-w-7xl mx-4 lg:mx-auto mt-2 rounded-2xl bg-white/70 backdrop-blur-xl border border-gray-200/50 shadow-sm"
           }`}
         >
-          <div className={`mx-auto px-5 lg:px-8 transition-all duration-700 ${scrolled ? "max-w-7xl" : ""}`}>
-            <div className={`flex items-center justify-between transition-all duration-700 ${scrolled ? "h-14" : "h-16"}`}>
+          <div className={`mx-auto px-5 lg:px-8 transition-all duration-500 ${scrolled ? "max-w-7xl" : ""}`}>
+            <div className={`flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14" : "h-16"}`}>
 
               {/* Logo */}
               <Link href="/" className="relative flex-shrink-0 group">
@@ -72,27 +67,27 @@ export default function Header() {
                   alt="AOVO"
                   width={88}
                   height={30}
-                  className={`w-auto invert transition-all duration-500 ${scrolled ? "h-[22px]" : "h-[26px]"}`}
+                  className={`w-auto transition-all duration-500 ${scrolled ? "h-[22px]" : "h-[26px]"}`}
                   priority
                 />
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gradient-to-r from-purple-primary to-blue-primary group-hover:w-full transition-all duration-500" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-purple-primary group-hover:w-full transition-all duration-500" />
               </Link>
 
               {/* Center Nav — desktop */}
               <nav className="hidden lg:flex items-center">
-                <div className="flex items-center gap-0.5 bg-white/[0.02] rounded-full px-1 py-1">
+                <div className="flex items-center gap-0.5 rounded-full px-1 py-1">
                   {navItems.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
                       onMouseEnter={() => setActiveNav(item.href)}
                       onMouseLeave={() => setActiveNav(null)}
-                      className="relative px-4 py-1.5 text-[13px] font-medium text-white/50 hover:text-white transition-colors duration-300 rounded-full"
+                      className="relative px-4 py-1.5 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors duration-200 rounded-full"
                     >
                       {activeNav === item.href && (
                         <motion.span
                           layoutId="nav-pill"
-                          className="absolute inset-0 bg-white/[0.06] rounded-full"
+                          className="absolute inset-0 bg-gray-100 rounded-full"
                           transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
                         />
                       )}
@@ -103,43 +98,42 @@ export default function Header() {
               </nav>
 
               {/* Right actions */}
-              <div className="flex items-center gap-2">
-                {/* Search toggle */}
+              <div className="flex items-center gap-1.5">
+                {/* Search */}
                 <button
                   onClick={() => setSearchOpen(true)}
-                  className="relative p-2.5 rounded-xl hover:bg-white/[0.05] transition-all duration-300 group"
+                  className="relative p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-200"
                   aria-label="검색"
                 >
-                  <svg className="w-[18px] h-[18px] text-white/40 group-hover:text-white/70 transition-colors" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <svg className="w-[18px] h-[18px] text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                   </svg>
                 </button>
 
-                {/* User icon */}
+                {/* User */}
                 <button
-                  className="relative p-2.5 rounded-xl hover:bg-white/[0.05] transition-all duration-300 group"
+                  className="relative p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-200"
                   aria-label="마이페이지"
                 >
-                  <svg className="w-[18px] h-[18px] text-white/40 group-hover:text-white/70 transition-colors" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <svg className="w-[18px] h-[18px] text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                   </svg>
                 </button>
 
-                {/* Divider — desktop only */}
-                <div className="hidden lg:block w-px h-5 bg-white/[0.08] mx-1" />
+                <div className="hidden lg:block w-px h-5 bg-gray-200 mx-1" />
 
-                {/* Login — desktop */}
+                {/* Login */}
                 <Link
                   href="/login"
-                  className="hidden lg:inline-flex text-[13px] font-medium text-white/45 hover:text-white px-4 py-2 rounded-xl hover:bg-white/[0.04] transition-all duration-300"
+                  className="hidden lg:inline-flex text-[13px] font-medium text-gray-500 hover:text-gray-900 px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200"
                 >
                   로그인
                 </Link>
 
-                {/* CTA — desktop */}
+                {/* CTA */}
                 <Link
                   href="/signup"
-                  className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-semibold text-white px-5 py-2 rounded-xl bg-gradient-to-r from-purple-primary to-purple-primary/80 hover:from-purple-dark hover:to-purple-primary transition-all duration-300 shadow-lg shadow-purple-primary/20 hover:shadow-purple-primary/30 hover:scale-[1.02] active:scale-[0.98]"
+                  className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-semibold text-white px-5 py-2 rounded-xl bg-purple-primary hover:bg-purple-dark transition-colors duration-200"
                 >
                   시작하기
                   <svg className="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -150,13 +144,13 @@ export default function Header() {
                 {/* Mobile hamburger */}
                 <button
                   onClick={() => setMobileOpen(!mobileOpen)}
-                  className="lg:hidden relative p-2.5 rounded-xl hover:bg-white/[0.05] transition-all duration-300"
+                  className="lg:hidden relative p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-200"
                   aria-label="메뉴"
                 >
                   <div className="w-[18px] h-[14px] relative flex flex-col justify-between">
-                    <span className={`block h-[1.5px] bg-white/50 rounded-full transition-all duration-500 origin-center ${mobileOpen ? "rotate-45 translate-y-[6.25px]" : ""}`} />
-                    <span className={`block h-[1.5px] bg-white/50 rounded-full transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
-                    <span className={`block h-[1.5px] bg-white/50 rounded-full transition-all duration-500 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[6.25px]" : ""}`} />
+                    <span className={`block h-[1.5px] bg-gray-500 rounded-full transition-all duration-500 origin-center ${mobileOpen ? "rotate-45 translate-y-[6.25px]" : ""}`} />
+                    <span className={`block h-[1.5px] bg-gray-500 rounded-full transition-all duration-300 ${mobileOpen ? "opacity-0 scale-x-0" : ""}`} />
+                    <span className={`block h-[1.5px] bg-gray-500 rounded-full transition-all duration-500 origin-center ${mobileOpen ? "-rotate-45 -translate-y-[6.25px]" : ""}`} />
                   </div>
                 </button>
               </div>
@@ -172,30 +166,26 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 lg:hidden"
           >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
 
-            {/* Panel */}
             <motion.nav
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="absolute right-0 top-0 h-full w-[min(85vw,360px)] bg-[#0c0c18]/95 backdrop-blur-2xl border-l border-white/[0.06] flex flex-col"
+              className="absolute right-0 top-0 h-full w-[min(85vw,360px)] bg-white border-l border-gray-200 flex flex-col shadow-2xl"
             >
-              {/* Close */}
               <div className="flex justify-end p-5">
-                <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-white/5 transition-colors">
-                  <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-colors">
+                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
 
-              {/* Nav links */}
               <div className="flex-1 px-5 pb-8 flex flex-col gap-1">
                 {navItems.map((item, i) => (
                   <motion.div
@@ -207,34 +197,33 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-between py-3.5 px-4 text-[15px] text-white/60 hover:text-white rounded-xl hover:bg-white/[0.04] transition-all duration-200 group"
+                      className="flex items-center justify-between py-3.5 px-4 text-[15px] text-gray-600 hover:text-gray-900 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
                     >
                       <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-white/15 group-hover:text-white/30 transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-400 transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                       </svg>
                     </Link>
                   </motion.div>
                 ))}
 
-                {/* CTA buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.35 }}
-                  className="flex flex-col gap-3 mt-auto pt-6 border-t border-white/[0.06]"
+                  className="flex flex-col gap-3 mt-auto pt-6 border-t border-gray-100"
                 >
                   <Link
                     href="/login"
                     onClick={() => setMobileOpen(false)}
-                    className="text-center text-[14px] font-medium text-white/60 py-3 rounded-xl border border-white/[0.08] hover:bg-white/[0.04] hover:text-white transition-all"
+                    className="text-center text-[14px] font-medium text-gray-600 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all"
                   >
                     로그인
                   </Link>
                   <Link
                     href="/signup"
                     onClick={() => setMobileOpen(false)}
-                    className="text-center text-[14px] font-semibold text-white py-3 rounded-xl bg-gradient-to-r from-purple-primary to-purple-primary/80 hover:from-purple-dark hover:to-purple-primary transition-all shadow-lg shadow-purple-primary/20"
+                    className="text-center text-[14px] font-semibold text-white py-3 rounded-xl bg-purple-primary hover:bg-purple-dark transition-colors"
                   >
                     시작하기
                   </Link>
@@ -252,43 +241,40 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[60]"
           >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-[#08080f]/80 backdrop-blur-xl" onClick={() => setSearchOpen(false)} />
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" onClick={() => setSearchOpen(false)} />
 
-            {/* Search panel */}
             <motion.div
-              initial={{ opacity: 0, y: -30, scale: 0.97 }}
+              initial={{ opacity: 0, y: -20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.97 }}
+              exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ type: "spring", damping: 28, stiffness: 320 }}
               className="relative max-w-2xl mx-auto mt-[15vh] px-6"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative">
-                <svg className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/30" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <svg className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                 </svg>
                 <input
                   ref={searchInputRef}
                   type="text"
                   placeholder="장비, 서비스, 플랜 검색..."
-                  className="w-full h-14 pl-14 pr-14 rounded-2xl bg-white/[0.05] border border-white/[0.08] text-[15px] text-white/90 placeholder:text-white/25 focus:outline-none focus:border-purple-primary/40 focus:ring-1 focus:ring-purple-primary/20 focus:bg-white/[0.07] transition-all duration-300"
+                  className="w-full h-14 pl-14 pr-14 rounded-2xl bg-white border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200 shadow-2xl"
                 />
                 <button
                   onClick={() => setSearchOpen(false)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-white/[0.06] text-[11px] text-white/30 font-mono hover:bg-white/[0.1] transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-gray-100 text-[11px] text-gray-400 font-mono hover:bg-gray-200 transition-colors"
                 >
                   ESC
                 </button>
               </div>
 
-              {/* Quick links */}
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {["지게차", "컨베이어", "구독 플랜", "견적 문의"].map((tag) => (
-                  <button key={tag} className="px-3.5 py-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] text-xs text-white/35 hover:text-white/60 hover:bg-white/[0.07] transition-all duration-200">
+                  <button key={tag} className="px-3.5 py-1.5 rounded-lg bg-white border border-gray-200 text-xs text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-all duration-200 shadow-sm">
                     {tag}
                   </button>
                 ))}
@@ -299,7 +285,7 @@ export default function Header() {
       </AnimatePresence>
 
       {/* Spacer */}
-      <div className={`transition-all duration-700 ${scrolled ? "h-14" : "h-24"}`} />
+      <div className={`transition-all duration-500 ${scrolled ? "h-14" : "h-24"}`} />
     </>
   );
 }

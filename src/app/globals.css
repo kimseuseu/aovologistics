@@ -1,25 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #06060b;
-  --foreground: #f0f0f2;
-  --purple-primary: #8b5cf6;
-  --purple-light: #a78bfa;
-  --purple-dark: #7c3aed;
-  --blue-primary: #3b82f6;
-  --blue-light: #60a5fa;
-  --pink-accent: #ec4899;
+  --background: #ffffff;
+  --foreground: #191919;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --purple-primary: #7c3aed;
+  --purple-light: #8b5cf6;
+  --purple-dark: #6d28d9;
+  --purple-50: #f5f3ff;
+  --purple-100: #ede9fe;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-gray-900: var(--gray-900);
   --color-purple-primary: var(--purple-primary);
   --color-purple-light: var(--purple-light);
   --color-purple-dark: var(--purple-dark);
-  --color-blue-primary: var(--blue-primary);
-  --color-blue-light: var(--blue-light);
-  --color-pink-accent: var(--pink-accent);
+  --color-purple-50: var(--purple-50);
+  --color-purple-100: var(--purple-100);
   --font-sans: 'SUIT Variable', var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-inter), 'SF Mono', 'Cascadia Code', monospace;
   --font-headline: 'GmarketSansBold', 'SUIT Variable', system-ui, sans-serif;
@@ -42,7 +60,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Typography System ── */
+/* ── Typography ── */
 .font-headline {
   font-family: var(--font-headline);
   font-weight: 700;
@@ -56,143 +74,8 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* ── Gradient Text ── */
-.text-gradient {
-  background: linear-gradient(135deg, #c084fc 0%, #818cf8 50%, #60a5fa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.text-gradient-warm {
-  background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #818cf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ── Glass Cards ── */
-.glass {
-  background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-.glass-card {
-  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.glass-card:hover {
-  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-  border-color: rgba(139,92,246,0.15);
-  box-shadow: 0 8px 40px rgba(139,92,246,0.08), 0 0 0 1px rgba(139,92,246,0.06);
-  transform: translateY(-2px);
-}
-.glass-strong {
-  background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(59,130,246,0.04) 100%);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(139,92,246,0.15);
-}
-
-/* ── Mesh Gradient (Aurora) ── */
-.aurora {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-  pointer-events: none;
-}
-.aurora-purple {
-  background: radial-gradient(circle, rgba(139,92,246,0.4) 0%, rgba(139,92,246,0.1) 40%, transparent 70%);
-}
-.aurora-blue {
-  background: radial-gradient(circle, rgba(59,130,246,0.35) 0%, rgba(59,130,246,0.08) 40%, transparent 70%);
-}
-.aurora-pink {
-  background: radial-gradient(circle, rgba(236,72,153,0.3) 0%, rgba(236,72,153,0.06) 40%, transparent 70%);
-}
-
-/* ── Dot Grid ── */
-.dot-grid {
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* ── Line Grid ── */
-.grid-dark {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-/* ── Glow Effects ── */
-.glow-purple {
-  box-shadow: 0 0 60px rgba(139,92,246,0.15), 0 0 120px rgba(139,92,246,0.06);
-}
-.glow-card {
-  box-shadow:
-    0 4px 24px rgba(0,0,0,0.3),
-    0 0 0 1px rgba(255,255,255,0.04),
-    inset 0 1px 0 rgba(255,255,255,0.04);
-}
-
-/* ── Divider ── */
-.divider-gradient {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06) 50%, transparent);
-}
-
-/* ── Tag / Pill ── */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(167,139,250,0.9);
-  background: rgba(139,92,246,0.08);
-  border: 1px solid rgba(139,92,246,0.12);
-}
-
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.12); }
-
-/* ── Keyframes ── */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-@keyframes aurora-drift {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(40px, -30px) scale(1.1); }
-  50% { transform: translate(-20px, 20px) scale(0.95); }
-  75% { transform: translate(30px, 10px) scale(1.05); }
-}
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 0.8; }
-}
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-aurora { animation: aurora-drift 15s ease-in-out infinite; }
-.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
-.animate-spin-slow { animation: spin-slow 30s linear infinite; }
-
-/* ── 3D Shapes ── */
-.shape-3d {
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
-}
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.15); }
