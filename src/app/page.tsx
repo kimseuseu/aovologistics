@@ -86,7 +86,7 @@ function Hero() {
         >
           <div className="relative flex items-center">
             <div className="absolute left-5">
-              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
             </div>
@@ -95,7 +95,7 @@ function Hero() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="어떤 물류장비가 필요하세요?"
-              className="w-full h-14 pl-14 pr-36 rounded-2xl border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200"
+              className="w-full h-14 pl-14 pr-36 rounded-2xl border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200"
             />
             <Link
               href="/inquiry"
@@ -121,11 +121,11 @@ function Hero() {
               className="flex flex-col items-center gap-2.5 group"
             >
               <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-purple-50 group-hover:border-purple-100 transition-all duration-200">
-                <svg className="w-6 h-6 text-gray-500 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-gray-600 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d={cat.icon} />
                 </svg>
               </div>
-              <span className="text-[12px] text-gray-500 group-hover:text-gray-900 font-medium transition-colors duration-200">{cat.label}</span>
+              <span className="text-[12px] text-gray-700 group-hover:text-gray-900 font-medium transition-colors duration-200">{cat.label}</span>
             </Link>
           ))}
         </motion.div>
@@ -150,12 +150,12 @@ function Hero() {
               className="group relative rounded-2xl border border-gray-100 bg-gray-50 overflow-hidden hover:shadow-lg hover:shadow-gray-100/80 hover:border-gray-200 transition-all duration-300"
             >
               <div className="p-5 pb-14">
-                <p className="text-[12px] text-gray-400">{svc.top}</p>
+                <p className="text-[12px] text-gray-500">{svc.top}</p>
                 <p className="text-[17px] font-bold text-gray-900 mt-1">{svc.title}</p>
               </div>
               <div className="absolute bottom-0 left-0 right-0 px-5 py-3.5 border-t border-gray-100 bg-white flex items-center justify-between">
-                <span className="text-[13px] text-gray-500">{svc.count}</span>
-                <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-500 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <span className="text-[13px] text-gray-600">{svc.count}</span>
+                <svg className="w-4 h-4 text-gray-400 group-hover:text-gray-600 group-hover:translate-x-0.5 transition-all duration-200" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </div>
@@ -182,7 +182,7 @@ function Hero() {
               <p className="font-stat text-2xl md:text-3xl text-purple-primary">
                 <Counter target={s.value} suffix={s.suffix} />
               </p>
-              <p className="text-[13px] text-gray-400 mt-1">{s.label}</p>
+              <p className="text-[13px] text-gray-600 mt-1">{s.label}</p>
             </div>
           ))}
         </div>
@@ -233,7 +233,7 @@ function ValueSection() {
             <h2 className="font-headline text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.03em] text-gray-900">
               구매에서 구독으로
             </h2>
-            <p className="mt-3 text-gray-500 text-[15px]">물류장비 도입의 새로운 기준을 만들어갑니다</p>
+            <p className="mt-3 text-gray-600 text-[15px]">물류장비 도입의 새로운 기준을 만들어갑니다</p>
           </div>
         </Reveal>
 
@@ -245,7 +245,7 @@ function ValueSection() {
                   {v.icon}
                 </div>
                 <h3 className="text-[17px] font-bold text-gray-900 mb-3">{v.title}</h3>
-                <p className="text-[14px] text-gray-500 leading-[1.7]">{v.desc}</p>
+                <p className="text-[14px] text-gray-600 leading-[1.7]">{v.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -295,7 +295,7 @@ function ServicesSection() {
               <h2 className="font-headline text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.03em] text-gray-900">
                 물류 현장에 필요한 모든 것
               </h2>
-              <p className="mt-2 text-gray-500 text-[15px]">장비 도입부터 유지보수까지, 하나의 구독으로 해결하세요</p>
+              <p className="mt-2 text-gray-600 text-[15px]">장비 도입부터 유지보수까지, 하나의 구독으로 해결하세요</p>
             </div>
           </Reveal>
 
@@ -308,7 +308,7 @@ function ServicesSection() {
                   className={`px-5 py-2 rounded-lg text-[13px] font-semibold transition-all duration-200 ${
                     activeTab === i
                       ? "bg-white text-gray-900 shadow-sm"
-                      : "text-gray-400 hover:text-gray-600"
+                      : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
                   {cat.tab}
@@ -342,9 +342,9 @@ function ServicesSection() {
                 </div>
 
                 <h4 className="text-[15px] font-bold text-gray-900 mb-2">{item.title}</h4>
-                <p className="text-[13px] text-gray-500 leading-[1.7]">{item.desc}</p>
+                <p className="text-[13px] text-gray-600 leading-[1.7]">{item.desc}</p>
 
-                <div className="mt-5 flex items-center gap-1.5 text-[13px] text-gray-300 group-hover:text-purple-primary transition-colors duration-300">
+                <div className="mt-5 flex items-center gap-1.5 text-[13px] text-gray-400 group-hover:text-purple-primary transition-colors duration-300">
                   <span>자세히 보기</span>
                   <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -394,7 +394,7 @@ function ProcessSection() {
                 </div>
 
                 <h4 className="text-[16px] font-bold text-gray-900 mb-3">{step.title}</h4>
-                <p className="text-[13px] text-gray-500 leading-[1.7]">{step.desc}</p>
+                <p className="text-[13px] text-gray-600 leading-[1.7]">{step.desc}</p>
               </div>
             </Reveal>
           ))}
@@ -446,7 +446,7 @@ function PlansSection() {
             <h2 className="font-headline text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.03em] text-gray-900 mb-3">
               구독 플랜
             </h2>
-            <p className="text-gray-500 text-[15px] max-w-lg mx-auto">비즈니스 규모에 맞는 플랜을 선택하세요. 모든 플랜에 유지보수가 포함되어 있습니다.</p>
+            <p className="text-gray-600 text-[15px] max-w-lg mx-auto">비즈니스 규모에 맞는 플랜을 선택하세요. 모든 플랜에 유지보수가 포함되어 있습니다.</p>
           </div>
         </Reveal>
 
@@ -465,22 +465,22 @@ function PlansSection() {
                 )}
 
                 <div className="mb-6">
-                  <span className={`text-[11px] font-mono tracking-wider uppercase ${p.highlight ? "text-white/60" : "text-gray-300"}`}>{p.name}</span>
+                  <span className={`text-[11px] font-mono tracking-wider uppercase ${p.highlight ? "text-white/60" : "text-gray-500"}`}>{p.name}</span>
                   <h3 className={`text-lg font-bold mt-1 ${p.highlight ? "text-white" : "text-gray-900"}`}>{p.nameKo}</h3>
-                  <p className={`text-[13px] mt-1 ${p.highlight ? "text-white/70" : "text-gray-400"}`}>{p.desc}</p>
+                  <p className={`text-[13px] mt-1 ${p.highlight ? "text-white/70" : "text-gray-500"}`}>{p.desc}</p>
                 </div>
 
                 <div className={`mb-7 pb-7 border-b ${p.highlight ? "border-white/20" : "border-gray-100"}`}>
                   <div className="flex items-baseline gap-1">
                     <span className={`font-stat text-4xl ${p.highlight ? "text-white" : "text-gray-900"}`}>{p.price}</span>
-                    <span className={`text-[14px] ${p.highlight ? "text-white/60" : "text-gray-400"}`}>{p.unit}</span>
+                    <span className={`text-[14px] ${p.highlight ? "text-white/60" : "text-gray-500"}`}>{p.unit}</span>
                   </div>
-                  <p className={`text-[12px] mt-1 ${p.highlight ? "text-white/50" : "text-gray-300"}`}>/ 월</p>
+                  <p className={`text-[12px] mt-1 ${p.highlight ? "text-white/50" : "text-gray-500"}`}>/ 월</p>
                 </div>
 
                 <ul className="space-y-3 flex-1">
                   {p.features.map((f) => (
-                    <li key={f} className={`flex items-center gap-3 text-[13px] ${p.highlight ? "text-white/80" : "text-gray-500"}`}>
+                    <li key={f} className={`flex items-center gap-3 text-[13px] ${p.highlight ? "text-white/80" : "text-gray-700"}`}>
                       <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${p.highlight ? "bg-white/20" : "bg-purple-50"}`}>
                         <svg className={`w-2.5 h-2.5 ${p.highlight ? "text-white" : "text-purple-primary"}`} fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                       </div>
@@ -542,7 +542,7 @@ function FAQSection() {
 
         <Reveal delay={0.3}>
           <div className="mt-10 text-center">
-            <p className="text-[14px] text-gray-400 mb-3">궁금한 점이 해결되지 않으셨나요?</p>
+            <p className="text-[14px] text-gray-500 mb-3">궁금한 점이 해결되지 않으셨나요?</p>
             <a href="tel:02-2683-4459" className="inline-flex items-center gap-2 text-purple-primary text-[14px] font-semibold hover:underline">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
               02-2683-4459
@@ -558,7 +558,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   return (
     <details className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-sm transition-shadow duration-200">
       <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden select-none">
-        <span className="text-[15px] font-medium text-gray-700 group-open:text-gray-900 transition-colors pr-4">{q}</span>
+        <span className="text-[15px] font-medium text-gray-800 group-open:text-gray-900 transition-colors pr-4">{q}</span>
         <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-gray-50 flex items-center justify-center group-open:bg-purple-50 transition-colors duration-200">
           <svg className="w-4 h-4 text-gray-400 group-open:text-purple-primary group-open:rotate-45 transition-all duration-200" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -566,7 +566,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </span>
       </summary>
       <div className="px-6 pb-5">
-        <p className="text-[14px] text-gray-500 leading-[1.8] border-t border-gray-50 pt-4">{a}</p>
+        <p className="text-[14px] text-gray-600 leading-[1.8] border-t border-gray-50 pt-4">{a}</p>
       </div>
     </details>
   );
@@ -586,8 +586,8 @@ function ClientsSection() {
     <section className="bg-white py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal>
-          <p className="text-center text-gray-400 text-[14px] mb-10">
-            <span className="font-stat font-bold text-gray-600">500+</span> 기업이 AOVO와 함께하고 있습니다
+          <p className="text-center text-gray-500 text-[14px] mb-10">
+            <span className="font-stat font-bold text-gray-800">500+</span> 기업이 AOVO와 함께하고 있습니다
           </p>
         </Reveal>
 
@@ -602,7 +602,7 @@ function ClientsSection() {
           >
             {[...clients, ...clients].map((c, i) => (
               <div key={`${c}-${i}`} className="flex-shrink-0 rounded-xl border border-gray-100 bg-gray-50/50 h-[52px] px-8 flex items-center justify-center">
-                <span className="text-[13px] font-medium text-gray-400 whitespace-nowrap">{c}</span>
+                <span className="text-[13px] font-medium text-gray-500 whitespace-nowrap">{c}</span>
               </div>
             ))}
           </motion.div>

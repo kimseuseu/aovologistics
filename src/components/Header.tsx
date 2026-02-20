@@ -78,7 +78,7 @@ export default function Header() {
                     AOVO
                   </span>
                   <span
-                    className={`font-bold tracking-wide text-gray-400 uppercase transition-all duration-500 ${scrolled ? "text-[8px]" : "text-[9px]"}`}
+                    className={`font-bold tracking-wide text-gray-500 uppercase transition-all duration-500 ${scrolled ? "text-[8px]" : "text-[9px]"}`}
                     style={{ fontFamily: "'Syne', sans-serif" }}
                   >
                     Logistics
@@ -95,7 +95,7 @@ export default function Header() {
                       href={item.href}
                       onMouseEnter={() => setActiveNav(item.href)}
                       onMouseLeave={() => setActiveNav(null)}
-                      className="relative px-4 py-1.5 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors duration-200 rounded-full"
+                      className="relative px-4 py-1.5 text-[13px] font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200 rounded-full"
                     >
                       {activeNav === item.href && (
                         <motion.span
@@ -118,7 +118,7 @@ export default function Header() {
                   className="relative p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-200"
                   aria-label="검색"
                 >
-                  <svg className="w-[18px] h-[18px] text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <svg className="w-[18px] h-[18px] text-gray-600" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                   </svg>
                 </button>
@@ -128,7 +128,7 @@ export default function Header() {
                   className="relative p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-200"
                   aria-label="마이페이지"
                 >
-                  <svg className="w-[18px] h-[18px] text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <svg className="w-[18px] h-[18px] text-gray-600" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                   </svg>
                 </button>
@@ -138,7 +138,7 @@ export default function Header() {
                 {/* Login */}
                 <Link
                   href="/login"
-                  className="hidden lg:inline-flex text-[13px] font-medium text-gray-500 hover:text-gray-900 px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200"
+                  className="hidden lg:inline-flex text-[13px] font-medium text-gray-700 hover:text-gray-900 px-4 py-2 rounded-xl hover:bg-gray-100 transition-all duration-200"
                 >
                   로그인
                 </Link>
@@ -193,7 +193,7 @@ export default function Header() {
             >
               <div className="flex justify-end p-5">
                 <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-gray-100 transition-colors">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
@@ -210,10 +210,10 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-between py-3.5 px-4 text-[15px] text-gray-600 hover:text-gray-900 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
+                      className="flex items-center justify-between py-3.5 px-4 text-[15px] text-gray-700 hover:text-gray-900 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
                     >
                       <span>{item.label}</span>
-                      <svg className="w-4 h-4 text-gray-300 group-hover:text-gray-400 transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400 group-hover:text-gray-600 transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                       </svg>
                     </Link>
@@ -229,7 +229,7 @@ export default function Header() {
                   <Link
                     href="/login"
                     onClick={() => setMobileOpen(false)}
-                    className="text-center text-[14px] font-medium text-gray-600 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all"
+                    className="text-center text-[14px] font-medium text-gray-700 py-3 rounded-xl border border-gray-200 hover:bg-gray-50 transition-all"
                   >
                     로그인
                   </Link>
@@ -275,11 +275,11 @@ export default function Header() {
                   ref={searchInputRef}
                   type="text"
                   placeholder="이동식도크, 리프트, 롤테이너 검색..."
-                  className="w-full h-14 pl-14 pr-14 rounded-2xl bg-white border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200 shadow-2xl"
+                  className="w-full h-14 pl-14 pr-14 rounded-2xl bg-white border border-gray-200 text-[15px] text-gray-900 placeholder:text-gray-500 focus:outline-none focus:border-purple-primary focus:ring-2 focus:ring-purple-100 transition-all duration-200 shadow-2xl"
                 />
                 <button
                   onClick={() => setSearchOpen(false)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-gray-100 text-[11px] text-gray-400 font-mono hover:bg-gray-200 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 px-2.5 py-1 rounded-lg bg-gray-100 text-[11px] text-gray-500 font-mono hover:bg-gray-200 transition-colors"
                 >
                   ESC
                 </button>
@@ -287,7 +287,7 @@ export default function Header() {
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {["이동식도크", "리프트", "롤테이너", "견적 문의"].map((tag) => (
-                  <button key={tag} className="px-3.5 py-1.5 rounded-lg bg-white border border-gray-200 text-xs text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-all duration-200 shadow-sm">
+                  <button key={tag} className="px-3.5 py-1.5 rounded-lg bg-white border border-gray-200 text-xs text-gray-600 hover:text-gray-800 hover:border-gray-300 transition-all duration-200 shadow-sm">
                     {tag}
                   </button>
                 ))}

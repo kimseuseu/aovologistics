@@ -55,7 +55,7 @@ function FooterModal({
           <h2 className="text-[15px] font-bold text-gray-900">{title}</h2>
           <button
             onClick={onClose}
-            className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-xl transition-colors"
+            className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-colors"
             aria-label="닫기"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -64,7 +64,7 @@ function FooterModal({
           </button>
         </div>
         <div className="flex-1 overflow-y-auto p-6">
-          <div className="text-[13px] text-gray-600 leading-[1.8] whitespace-pre-line">{content}</div>
+          <div className="text-[13px] text-gray-700 leading-[1.8] whitespace-pre-line">{content}</div>
         </div>
       </div>
     </div>
@@ -100,11 +100,11 @@ export default function Footer() {
                 height={40}
                 className="h-6 w-auto mb-5 opacity-60"
               />
-              <p className="text-[13px] text-gray-400 leading-[1.8] max-w-sm mb-6">
+              <p className="text-[13px] text-gray-500 leading-[1.8] max-w-sm mb-6">
                 물류장비 구독 서비스. 이동식도크부터 트레일러까지,
                 초기 비용 없이 월 구독료로 도입하고 유지보수까지 해결합니다.
               </p>
-              <div className="text-[12px] text-gray-300 space-y-1.5 leading-relaxed">
+              <div className="text-[12px] text-gray-500 space-y-1.5 leading-relaxed">
                 <p>주식회사 킴샵 | 대표 김영식</p>
                 <p>사업자등록번호 302-88-01373</p>
                 <p>인천광역시 중구 항동 서해대로 111</p>
@@ -113,7 +113,7 @@ export default function Footer() {
 
             {/* Links */}
             <div className="md:col-span-2">
-              <h4 className="text-[12px] text-gray-400 tracking-[0.08em] uppercase mb-5 font-semibold">서비스</h4>
+              <h4 className="text-[12px] text-gray-500 tracking-[0.08em] uppercase mb-5 font-semibold">서비스</h4>
               <ul className="space-y-3">
                 {[
                   { label: "구독 플랜", href: "/plans" },
@@ -121,7 +121,7 @@ export default function Footer() {
                   { label: "견적 문의", href: "/inquiry" },
                 ].map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-[13px] text-gray-500 hover:text-purple-primary transition-colors duration-200">
+                    <Link href={item.href} className="text-[13px] text-gray-600 hover:text-purple-primary transition-colors duration-200">
                       {item.label}
                     </Link>
                   </li>
@@ -130,14 +130,14 @@ export default function Footer() {
             </div>
 
             <div className="md:col-span-2">
-              <h4 className="text-[12px] text-gray-400 tracking-[0.08em] uppercase mb-5 font-semibold">지원</h4>
+              <h4 className="text-[12px] text-gray-500 tracking-[0.08em] uppercase mb-5 font-semibold">지원</h4>
               <ul className="space-y-3">
                 {[
                   { label: "고객지원", href: "/support" },
                   { label: "자주 묻는 질문", href: "/faq" },
                 ].map((item) => (
                   <li key={item.href}>
-                    <Link href={item.href} className="text-[13px] text-gray-500 hover:text-purple-primary transition-colors duration-200">
+                    <Link href={item.href} className="text-[13px] text-gray-600 hover:text-purple-primary transition-colors duration-200">
                       {item.label}
                     </Link>
                   </li>
@@ -147,16 +147,16 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="md:col-span-3">
-              <h4 className="text-[12px] text-gray-400 tracking-[0.08em] uppercase mb-5 font-semibold">고객센터</h4>
+              <h4 className="text-[12px] text-gray-500 tracking-[0.08em] uppercase mb-5 font-semibold">고객센터</h4>
               <a href="tel:02-2683-4459" className="text-xl font-bold text-gray-800 hover:text-purple-primary transition-colors block mb-3 tracking-tight">
                 02-2683-4459
               </a>
-              <div className="text-[12px] text-gray-400 space-y-1.5">
+              <div className="text-[12px] text-gray-500 space-y-1.5">
                 <p>평일 10:00 – 17:00</p>
                 <p>점심 12:30 – 13:30</p>
                 <p>토/일/공휴일 휴무</p>
               </div>
-              <a href="mailto:mbc8447289@naver.com" className="inline-block mt-3 text-[12px] text-gray-400 hover:text-purple-primary transition-colors">
+              <a href="mailto:mbc8447289@naver.com" className="inline-block mt-3 text-[12px] text-gray-500 hover:text-purple-primary transition-colors">
                 mbc8447289@naver.com
               </a>
             </div>
@@ -164,19 +164,19 @@ export default function Footer() {
 
           {/* Bottom */}
           <div className="py-6 border-t border-gray-200/60">
-            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px] text-gray-400 mb-5">
-              <button onClick={() => openModal("terms")} className="hover:text-gray-600 transition-colors">이용약관</button>
-              <button onClick={() => openModal("privacy")} className="text-gray-600 font-semibold hover:text-purple-primary transition-colors">개인정보처리방침</button>
-              <button onClick={() => openModal("guide")} className="hover:text-gray-600 transition-colors">구독 이용안내</button>
-              <button onClick={() => openModal("exchange")} className="hover:text-gray-600 transition-colors">구독 변경/해지</button>
-              <button onClick={() => openModal("shipping")} className="hover:text-gray-600 transition-colors">장비 배송/설치</button>
+            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px] text-gray-500 mb-5">
+              <button onClick={() => openModal("terms")} className="hover:text-gray-700 transition-colors">이용약관</button>
+              <button onClick={() => openModal("privacy")} className="text-gray-700 font-semibold hover:text-purple-primary transition-colors">개인정보처리방침</button>
+              <button onClick={() => openModal("guide")} className="hover:text-gray-700 transition-colors">구독 이용안내</button>
+              <button onClick={() => openModal("exchange")} className="hover:text-gray-700 transition-colors">구독 변경/해지</button>
+              <button onClick={() => openModal("shipping")} className="hover:text-gray-700 transition-colors">장비 배송/설치</button>
             </div>
 
             <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-              <p className="text-[11px] text-gray-300">
+              <p className="text-[11px] text-gray-400">
                 &copy; 2026 AOVO LOGISTICS. All rights reserved.
               </p>
-              <p className="text-[10px] text-gray-300">
+              <p className="text-[10px] text-gray-400">
                 Hosted on Vercel
               </p>
             </div>
