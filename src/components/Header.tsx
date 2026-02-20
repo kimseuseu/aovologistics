@@ -58,10 +58,10 @@ export default function Header() {
           }`}
         >
           <div className={`mx-auto px-5 lg:px-8 transition-all duration-500 ${scrolled ? "max-w-7xl" : ""}`}>
-            <div className={`flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14" : "h-16"}`}>
+            <div className={`relative flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14" : "h-16"}`}>
 
               {/* Logo */}
-              <Link href="/" className="relative flex-shrink-0 group">
+              <Link href="/" className="relative flex-shrink-0 group z-10">
                 <Image
                   src="/images/aovo_symbol.png"
                   alt="AOVO"
@@ -73,8 +73,8 @@ export default function Header() {
                 <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-purple-primary group-hover:w-full transition-all duration-500" />
               </Link>
 
-              {/* Center Nav — desktop */}
-              <nav className="hidden lg:flex items-center">
+              {/* Center Nav — desktop (absolute center) */}
+              <nav className="hidden lg:flex items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div className="flex items-center gap-0.5 rounded-full px-1 py-1">
                   {navItems.map((item) => (
                     <Link
@@ -98,7 +98,7 @@ export default function Header() {
               </nav>
 
               {/* Right actions */}
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1.5 z-10">
                 {/* Search */}
                 <button
                   onClick={() => setSearchOpen(true)}
