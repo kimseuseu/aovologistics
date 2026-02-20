@@ -71,7 +71,7 @@ export default function Header() {
                   priority
                 />
                 <div className="w-px self-stretch bg-gray-200/80 mx-0.5" />
-                <div className="flex flex-col leading-none gap-[2px]">
+                <div className="flex flex-col leading-none gap-[1px]">
                   <span
                     className={`font-extrabold tracking-[-0.02em] text-gray-900 transition-all duration-500 ${scrolled ? "text-[15px]" : "text-[17px]"}`}
                     style={{ fontFamily: "'Syne', sans-serif" }}
@@ -79,10 +79,10 @@ export default function Header() {
                     AOVO
                   </span>
                   <span
-                    className={`font-bold tracking-[0.12em] text-gray-400 uppercase transition-all duration-500 ${scrolled ? "text-[7.5px]" : "text-[8.5px]"}`}
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                    className={`font-bold text-gray-400 uppercase transition-all duration-500 ${scrolled ? "text-[7px]" : "text-[7.5px]"}`}
+                    style={{ fontFamily: "'Syne', sans-serif", letterSpacing: '0.32em' }}
                   >
-                    Logistics
+                    LOGISTICS
                   </span>
                 </div>
               </Link>
