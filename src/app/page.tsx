@@ -113,7 +113,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex justify-center gap-5 md:gap-8 flex-wrap"
+          className="mt-10 flex justify-center gap-6 md:gap-10 flex-wrap"
         >
           {categories.map((cat) => (
             <Link
@@ -121,22 +121,22 @@ function Hero() {
               href={cat.href}
               className="flex flex-col items-center gap-2.5 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-purple-50 group-hover:border-purple-100 transition-all duration-200 overflow-hidden">
+              <div className="w-20 h-20 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-purple-50 group-hover:border-purple-100 transition-all duration-200 overflow-hidden">
                 {cat.image ? (
                   <Image
                     src={cat.image}
                     alt={cat.label}
-                    width={56}
-                    height={56}
-                    className="w-full h-full object-contain p-1.5"
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-contain p-2"
                   />
                 ) : (
-                  <svg className="w-6 h-6 text-gray-600 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 text-gray-600 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
                   </svg>
                 )}
               </div>
-              <span className="text-[12px] text-gray-700 group-hover:text-gray-900 font-medium transition-colors duration-200">{cat.label}</span>
+              <span className="text-[13px] text-gray-700 group-hover:text-gray-900 font-medium transition-colors duration-200">{cat.label}</span>
             </Link>
           ))}
         </motion.div>
