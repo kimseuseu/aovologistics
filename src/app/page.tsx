@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 /* ── Reveal wrapper ── */
 function Reveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -47,20 +48,20 @@ function Hero() {
   const [searchQuery, setSearchQuery] = useState("");
 
   const categories = [
-    { label: "전체보기", href: "/equipment", icon: "M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" },
-    { label: "이동식도크", href: "/equipment/dock", icon: "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" },
-    { label: "리프트", href: "/equipment/lift", icon: "M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5-4.5L16.5 16.5m0 0L12 12m4.5 4.5V3" },
-    { label: "롤테이너", href: "/equipment/rolltainer", icon: "M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" },
-    { label: "메쉬파레트", href: "/equipment/mesh-pallet", icon: "M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" },
-    { label: "트레일러", href: "/equipment/trailer", icon: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" },
-    { label: "수상도크", href: "/equipment/floating-dock", icon: "M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" },
-    { label: "자키", href: "/equipment/jockey", icon: "M11.42 15.17l-5.1-5.1m0 0L3.14 12.9a.75.75 0 000 1.06l5.1 5.1m-5.1-5.1h11.48m0 0l2.17-2.83a.75.75 0 000-.94l-2.17-2.83M16.9 10.07h3.36a.75.75 0 01.75.75v2.36a.75.75 0 01-.75.75H16.9" },
+    { label: "전체보기", href: "/equipment", image: "" },
+    { label: "이동식도크", href: "/equipment/dock", image: "/images/categories/category-dock.png" },
+    { label: "도크보드", href: "/equipment/dockboard", image: "/images/categories/category-dockboard.png" },
+    { label: "리프트", href: "/equipment/lift", image: "/images/categories/category-lift.png" },
+    { label: "롤테이너", href: "/equipment/rolltainer", image: "/images/categories/category-rolltainer.png" },
+    { label: "메쉬파레트", href: "/equipment/mesh-pallet", image: "/images/categories/category-mesh.png" },
+    { label: "자바라컨베이어", href: "/equipment/conveyor", image: "/images/categories/category-javara.png" },
+    { label: "자키", href: "/equipment/jockey", image: "/images/categories/category-jockey.png" },
   ];
 
   const quickServices = [
-    { top: "하역 작업 효율화", title: "이동식도크·리프트", count: "하역 장비 3종", href: "/equipment/dock" },
+    { top: "하역 작업 효율화", title: "이동식도크·도크보드", count: "하역 장비 3종", href: "/equipment/dock" },
     { top: "물류 운반 솔루션", title: "롤테이너·메쉬파레트", count: "운반 장비 3종", href: "/equipment/rolltainer" },
-    { top: "대형 운송 장비", title: "트레일러·수상도크", count: "운송 장비 2종", href: "/equipment/trailer" },
+    { top: "물류 자동화 장비", title: "자바라컨베이어·리프트", count: "자동화 장비 2종", href: "/equipment/conveyor" },
     { top: "전문가 직접 관리", title: "유지보수·긴급출동", count: "관리 서비스 3종", href: "/services" },
   ];
 
@@ -120,10 +121,20 @@ function Hero() {
               href={cat.href}
               className="flex flex-col items-center gap-2.5 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-purple-50 group-hover:border-purple-100 transition-all duration-200">
-                <svg className="w-6 h-6 text-gray-600 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={cat.icon} />
-                </svg>
+              <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center group-hover:bg-purple-50 group-hover:border-purple-100 transition-all duration-200 overflow-hidden">
+                {cat.image ? (
+                  <Image
+                    src={cat.image}
+                    alt={cat.label}
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-contain p-1.5"
+                  />
+                ) : (
+                  <svg className="w-6 h-6 text-gray-600 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                  </svg>
+                )}
               </div>
               <span className="text-[12px] text-gray-700 group-hover:text-gray-900 font-medium transition-colors duration-200">{cat.label}</span>
             </Link>
@@ -212,7 +223,7 @@ function ValueSection() {
         </svg>
       ),
       title: "올인원 유지보수",
-      desc: "정기 점검, 부품 교체, 긴급 수리까지 도크·리프트·트레일러 전 장비 구독료에 포함됩니다.",
+      desc: "정기 점검, 부품 교체, 긴급 수리까지 도크·리프트·컨베이어 전 장비 구독료에 포함됩니다.",
     },
     {
       icon: (
@@ -266,12 +277,12 @@ function ServicesSection() {
       tab: "장비",
       items: [
         { title: "이동식도크", desc: "높이 조절형 이동식 도크로 다양한 차량에 맞춰 하역 작업을 수행합니다.", tag: "Dock", icon: "M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" },
+        { title: "도크보드", desc: "고정식·이동식 도크보드로 차량과 건물 사이 높이 차이를 안전하게 연결합니다.", tag: "Dockboard", icon: "M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" },
         { title: "리프트", desc: "유압식·전동식 리프트로 중량물을 안전하게 상하 이동시킵니다.", tag: "Lift", icon: "M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5-4.5L16.5 16.5m0 0L12 12m4.5 4.5V3" },
         { title: "롤테이너", desc: "접이식 롤테이너로 물류센터·매장 간 효율적인 운반이 가능합니다.", tag: "Rolltainer", icon: "M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" },
         { title: "메쉬파레트", desc: "철망 구조의 메쉬파레트로 적재·보관·운반을 한번에 해결합니다.", tag: "Mesh Pallet", icon: "M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" },
         { title: "인테이너", desc: "대형 컨테이너형 적재함으로 산업 현장의 대량 운송을 지원합니다.", tag: "In-tainer", icon: "M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" },
-        { title: "트레일러", desc: "풀 트레일러·세미 트레일러로 대형 화물의 장거리 운송을 지원합니다.", tag: "Trailer", icon: "M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" },
-        { title: "수상도크", desc: "부유식 수상도크로 항만·조선소의 선박 접안 작업을 지원합니다.", tag: "Floating Dock", icon: "M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" },
+        { title: "자바라컨베이어", desc: "신축 가능한 자바라컨베이어로 상하차 작업 동선을 최적화합니다.", tag: "Conveyor", icon: "M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" },
         { title: "자키", desc: "트레일러 연결·분리 작업에 특화된 자키(Jockey)로 야드 운영 효율을 높입니다.", tag: "Jockey", icon: "M11.42 15.17l-5.1-5.1m0 0L3.14 12.9a.75.75 0 000 1.06l5.1 5.1m-5.1-5.1h11.48m0 0l2.17-2.83a.75.75 0 000-.94l-2.17-2.83M16.9 10.07h3.36a.75.75 0 01.75.75v2.36a.75.75 0 01-.75.75H16.9" },
       ],
     },
@@ -279,7 +290,7 @@ function ServicesSection() {
       tab: "서비스",
       items: [
         { title: "정기 유지보수", desc: "월간 정기 점검과 부품 교체를 구독료에 포함하여 제공합니다.", tag: "Maintenance", icon: "M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" },
-        { title: "긴급 출동", desc: "24시간 전국 긴급 출동 — 도크·리프트·트레일러 현장 수리 대응합니다.", tag: "Emergency", icon: "M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" },
+        { title: "긴급 출동", desc: "24시간 전국 긴급 출동 — 도크·리프트·컨베이어 현장 수리 대응합니다.", tag: "Emergency", icon: "M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" },
         { title: "전담 매니저", desc: "비즈니스 플랜 이상 — 전담 매니저가 장비 상태를 직접 관리합니다.", tag: "Manager", icon: "M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" },
         { title: "실시간 대시보드", desc: "전 장비의 상태, 가동률, 점검 이력을 실시간으로 모니터링합니다.", tag: "Dashboard", icon: "M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" },
       ],
