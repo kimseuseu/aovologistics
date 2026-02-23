@@ -113,7 +113,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex justify-center gap-6 md:gap-10 flex-wrap"
+          className="mt-10 flex justify-center gap-4 md:gap-7 flex-wrap max-w-[860px] mx-auto"
         >
           {categories.map((cat) => (
             <Link
@@ -128,7 +128,7 @@ function Hero() {
                     alt={cat.label}
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain p-2"
+                    className="w-full h-full object-cover"
                   />
                 ) : (
                   <svg className="w-7 h-7 text-gray-600 group-hover:text-purple-primary transition-colors duration-200" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
