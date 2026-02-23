@@ -218,10 +218,10 @@ function ProductLineupSection() {
   ];
 
   return (
-    <section className="bg-white py-20 lg:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="bg-white pt-16 lg:pt-24">
+      <div className="max-w-7xl mx-auto px-6 mb-8">
         <Reveal>
-          <div className="flex items-end justify-between mb-10">
+          <div className="flex items-end justify-between">
             <div>
               <h2 className="font-headline text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.03em] text-gray-900">
                 제품 라인업
@@ -234,34 +234,30 @@ function ProductLineupSection() {
             </Link>
           </div>
         </Reveal>
+      </div>
 
-        {/* Bento grid — 첫 번째 행: 2큰+1큰, 두 번째 행: 나머지 */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {products.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.05}>
-              <Link
-                href={p.href}
-                className={`group relative block rounded-2xl overflow-hidden bg-gray-50 border border-gray-100 hover:shadow-xl hover:shadow-gray-200/60 transition-all duration-300 ${
-                  i < 2 ? "lg:col-span-2 aspect-[4/3]" : "aspect-square"
-                }`}
-              >
-                <div className="absolute inset-0 flex items-center justify-center p-6">
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-5">
-                  <h3 className="text-white text-[17px] font-bold">{p.name}</h3>
-                  <p className="text-white/70 text-[13px] mt-0.5">{p.desc}</p>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+      {/* 풀와이드 4열 그리드 — gap 없이 꽉 채움 */}
+      <div className="grid grid-cols-2 lg:grid-cols-4">
+        {products.map((p, i) => (
+          <Reveal key={p.name} delay={i * 0.04}>
+            <Link
+              href={p.href}
+              className="group relative block overflow-hidden bg-gray-100 aspect-square"
+            >
+              <Image
+                src={p.image}
+                alt={p.name}
+                width={600}
+                height={600}
+                className="w-full h-full object-contain p-6 lg:p-10 group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent p-5 lg:p-6">
+                <h3 className="text-white text-[16px] lg:text-[20px] font-bold">{p.name}</h3>
+                <p className="text-white/60 text-[12px] lg:text-[13px] mt-0.5">{p.desc}</p>
+              </div>
+            </Link>
+          </Reveal>
+        ))}
       </div>
     </section>
   );
